@@ -32,7 +32,34 @@ declare module 'styled-components' {
             neutralDark: string;
             neutralDarkVariant: string;
         };
-        typography: {};
-        sizes: {};
+        typography: {
+            display_lg: string;
+            display_md: string;
+            display_sm: string;
+
+            headline_lg: string;
+            headline_md: string;
+            headline_sm: string;
+
+            title_lg: string;
+            title_md: string;
+            title_sm: string;
+
+            label_lg: string;
+            label_md: string;
+            label_sm: string;
+
+            body_lg: string;
+            body_md: string;
+            body_sm: string;
+        };
+        sizes: {
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+            xl2: string;
+        };
     }
 }

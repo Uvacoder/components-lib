@@ -8,12 +8,18 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    html: {
+    html {
         font-size: 62.5%;
     }
 
     body {
-        font-size: 1.6rem;
+        font-size: ${({ theme }) => theme.sizes.md};
+        width: 100%;
+        height: 100%;
+    }
+
+    body * {
+        font: ${({ theme }) => theme.typography.body_lg};
     }
 `;
 

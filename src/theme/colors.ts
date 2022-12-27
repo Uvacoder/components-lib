@@ -7,7 +7,7 @@ const baseColors = {
     pink_200: '#f472b6',
     pink_300: '#9d174d',
 
-    blue_100: '##7dd3fc',
+    blue_100: '#7dd3fc',
     blue_200: '#38bdf8',
     blue_300: '#075985',
 

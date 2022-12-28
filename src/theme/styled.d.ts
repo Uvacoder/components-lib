@@ -11,6 +11,10 @@ declare module 'styled-components' {
             secondaryVariant: string;
             secondaryVariant_2: string;
 
+            sky: string;
+            skyVariant: string;
+            skyVariant_2: string;
+
             warning: string;
             warningVariant: string;
             warningVariant_2: string;
@@ -31,6 +35,7 @@ declare module 'styled-components' {
 
             neutralDark: string;
             neutralDarkVariant: string;
+            neutralDarkVariant_2: string;
         };
         typography: {
             display_lg: string;

@@ -1,0 +1,27 @@
+export interface ColorsProps {
+    color:
+        | 'primary'
+        | 'primaryVariant'
+        | 'primaryVariant_2'
+        | 'secondary'
+        | 'secondaryVariant'
+        | 'secondaryVariant_2'
+        | 'sky'
+        | 'skyVariant'
+        | 'skyVariant_2'
+        | 'warning'
+        | 'warningVariant'
+        | 'warningVariant_2'
+        | 'error'
+        | 'errorVariant'
+        | 'errorVariant_2'
+        | 'neutral'
+        | 'neutralVariant'
+        | 'neutralVariant_2'
+        | 'neutralLight'
+        | 'neutralLightVariant'
+        | 'neutralMedium'
+        | 'neutralMediumVariant'
+        | 'neutralDark'
+        | 'neutralDarkVariant';
+}

@@ -16,6 +16,7 @@ export interface StyledProps {
         | 'space-evenly'
         | 'inherit'
         | 'initial';
+    wrap?: boolean;
     w?: string;
     h?: string;
     bg?: ColorsProps['color'];
@@ -40,6 +41,8 @@ const StyledBox = styled.div<StyledProps>`
                 align-items: ${props.items};
                 justify-content: ${props.justify};
                 gap: ${props.space};
+
+                flex-wrap: ${props.wrap ? 'wrap' : 'nowrap'};
             `}
 
             width: ${w ? w : null};

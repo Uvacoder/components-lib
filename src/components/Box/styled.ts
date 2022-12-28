@@ -8,6 +8,9 @@ interface ColorsProps {
         | 'secondary'
         | 'secondaryVariant'
         | 'secondaryVariant_2'
+        | 'sky'
+        | 'skyVariant'
+        | 'skyVariant_2'
         | 'warning'
         | 'warningVariant'
         | 'warningVariant_2'
@@ -51,6 +54,7 @@ export interface StyledProps {
     rounded?: string;
     space?: string;
     center?: boolean;
+    shadow?: boolean;
 }
 
 const StyledBox = css<StyledProps>`
@@ -81,11 +85,13 @@ const StyledBox = css<StyledProps>`
 
             ${props.mx &&
             css`
-                margin-inline: ${props.mx};
+                margin-right: ${props.mx};
+                margin-left: ${props.mx};
             `}
             ${props.my &&
             css`
-                margin-block: ${props.mx};
+                margin-top: ${props.my};
+                margin-bottom: ${props.my};
             `}
 
             ${props.px &&
@@ -112,6 +118,11 @@ const StyledBox = css<StyledProps>`
             ${props.center &&
             css`
                 margin: 0 auto;
+            `}
+
+            ${props.shadow &&
+            css`
+                box-shadow: 0 0 12px ${theme.colors.neutralDarkVariant_2};
             `}
         `}
     `}

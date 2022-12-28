@@ -1,22 +1,24 @@
-import Box from '@src/components/Box';
 import type { NextPage } from 'next';
+import Box from '@src/components/Box';
+
 const Home: NextPage = () => {
     return (
         <>
-            <main>testando Testando</main>
             <Box
+                as="article"
                 flex
                 items="center"
                 justify="space-between"
                 h="300px"
                 space="100px"
                 rounded="7px"
+                bg="sky"
+                shadow
                 w="90%"
-                border="3px"
-                bColor="error"
                 py="12px"
                 px="12px"
-                center>
+                my="12px"
+                mx="auto">
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur suscipit libero excepturi hic
                     nesciunt labore voluptates doloremque placeat ipsa, temporibus quidem deserunt expedita nemo

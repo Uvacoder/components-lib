@@ -1,32 +1,6 @@
 import styled, { css } from 'styled-components';
 
-interface ColorsProps {
-    color:
-        | 'primary'
-        | 'primaryVariant'
-        | 'primaryVariant_2'
-        | 'secondary'
-        | 'secondaryVariant'
-        | 'secondaryVariant_2'
-        | 'sky'
-        | 'skyVariant'
-        | 'skyVariant_2'
-        | 'warning'
-        | 'warningVariant'
-        | 'warningVariant_2'
-        | 'error'
-        | 'errorVariant'
-        | 'errorVariant_2'
-        | 'neutral'
-        | 'neutralVariant'
-        | 'neutralVariant_2'
-        | 'neutralLight'
-        | 'neutralLightVariant'
-        | 'neutralMedium'
-        | 'neutralMediumVariant'
-        | 'neutralDark'
-        | 'neutralDarkVariant';
-}
+import { ColorsProps } from '@src/infra/interfaces/ColorsProp';
 
 export interface StyledProps {
     flex?: boolean;
@@ -57,7 +31,7 @@ export interface StyledProps {
     shadow?: boolean;
 }
 
-const StyledBox = css<StyledProps>`
+const StyledBox = styled.div<StyledProps>`
     ${({ theme }) => css`
         ${({ flex, h, w, ...props }: StyledProps) => css`
             ${flex &&
@@ -68,94 +42,33 @@ const StyledBox = css<StyledProps>`
                 gap: ${props.space};
             `}
 
-            ${w &&
-            css`
-                width: ${w};
-            `}
+            width: ${w ? w : null};
 
-            ${h &&
-            css`
-                height: ${h};
-            `};
+            height: ${h ? h : null};
 
-            ${props.bg &&
-            css`
-                background: ${theme.colors[props.bg]};
-            `}
+            background-color: ${props.bg ? theme.colors[props.bg] : null};
 
-            ${props.mx &&
-            css`
-                margin-right: ${props.mx};
-                margin-left: ${props.mx};
-            `}
-            ${props.my &&
-            css`
-                margin-top: ${props.my};
-                margin-bottom: ${props.my};
-            `}
+            margin-inline: ${props.mx ? props.mx : null};
 
-            ${props.px &&
-            css`
-                padding-inline: ${props.px};
-            `}
+            margin-block: ${props.my ? props.my : null};
 
-            ${props.py &&
-            css`
-                padding-block: ${props.py};
-            `}
+            padding-inline: ${props.px ? props.px : null};
+
+            padding-block: ${props.py ? props.py : null};
 
             ${props.border &&
             props.bColor &&
             css`
                 border: ${props.border} solid ${theme.colors[props.bColor]};
-            `}
+            `};
 
-            ${props.rounded &&
-            css`
-                border-radius: ${props.rounded || '12px'};
-            `}
+            border-radius: ${props.rounded ? `${props.rounded || '12px'}` : null};
 
-            ${props.center &&
-            css`
-                margin: 0 auto;
-            `}
+            margin: ${props.center ? '0 auto' : null};
 
-            ${props.shadow &&
-            css`
-                box-shadow: 0 0 12px ${theme.colors.neutralDarkVariant_2};
-            `}
+            box-shadow: ${props.shadow ? `0 0 12px ${theme.colors.neutralDarkVariant_2}` : null};
         `}
     `}
 `;
 
-const StyledArticle = styled.article`
-    ${StyledBox}
-`;
-
-const StyledAside = styled.aside`
-    ${StyledBox}
-`;
-
-const StyledDiv = styled.div`
-    ${StyledBox}
-`;
-const StyledFooter = styled.footer`
-    ${StyledBox}
-`;
-
-const StyledHeader = styled.header`
-    ${StyledBox}
-`;
-
-const StyledMain = styled.main`
-    ${StyledBox}
-`;
-
-const StyledNav = styled.nav`
-    ${StyledBox}
-`;
-
-const StyledSection = styled.section`
-    ${StyledBox}
-`;
-export { StyledArticle, StyledAside, StyledDiv, StyledFooter, StyledHeader, StyledMain, StyledNav, StyledSection };
+export { StyledBox };

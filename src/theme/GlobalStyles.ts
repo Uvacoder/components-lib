@@ -12,6 +12,10 @@ const GlobalStyles = createGlobalStyle`
         font-size: 62.5%;
     }
 
+    body.lock-scroll {
+        overflow: hidden;
+    }
+
     body {
         font-size: ${({ theme }) => theme.sizes.md};
         width: 100%;

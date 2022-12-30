@@ -16,8 +16,10 @@ export interface StyledProps {
         | 'space-evenly'
         | 'inherit'
         | 'initial';
-    wrap?: boolean;
+    flexWrap?: boolean;
+    direction?: 'row' | 'column';
     w?: string;
+    minW?: string;
     h?: string;
     bg?: ColorsProps['color'];
     bColor?: ColorsProps['color'];
@@ -30,6 +32,7 @@ export interface StyledProps {
     space?: string;
     center?: boolean;
     shadow?: boolean;
+    zIndex?: string;
 }
 
 const StyledBox = styled.div<StyledProps>`
@@ -41,11 +44,14 @@ const StyledBox = styled.div<StyledProps>`
                 align-items: ${props.items};
                 justify-content: ${props.justify};
                 gap: ${props.space};
+                flex-wrap: ${props.flexWrap ? 'wrap' : null};
 
-                flex-wrap: ${props.wrap ? 'wrap' : 'nowrap'};
+                flex-direction: ${props.direction ? props.direction : null};
             `}
 
             width: ${w ? w : null};
+
+            min-width: ${props.minW ? props.minW : null};
 
             height: ${h ? h : null};
 
@@ -70,6 +76,8 @@ const StyledBox = styled.div<StyledProps>`
             margin: ${props.center ? '0 auto' : null};
 
             box-shadow: ${props.shadow ? `0 0 12px ${theme.colors.neutralDarkVariant_2}` : null};
+
+            z-index: ${props.zIndex ? props.zIndex : null};
         `}
     `}
 `;
